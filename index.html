@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Player</title>
+    <style>
+      body {
+        background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+        background: linear-gradient(to right, #25c481, #25b7c4);
+        font-family: "Roboto", sans-serif;
+      }
+      ul#playlistBox {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #ccc;
+        height: 200px;
+        overflow-y: auto;
+        cursor: default;
+        font-family: sans-serif;
+      }
+
+      ul#playlistBox li {
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Playlist Player</h2>
+    <h3>Miniwindow Position & Size</h3>
+    <label>X: <input type="number" id="inputX" value="0" /></label>
+    <label>Y: <input type="number" id="inputY" value="0" /></label>
+    <label>W: <input type="number" id="inputW" value="300" /></label>
+    <label>H: <input type="number" id="inputH" value="200" /></label>
+    <button id="sendToMiniBtn">Send to Miniwindow</button>
+    <h3>Miniwindow Controls</h3>
+    <button id="toggleOnTopBtn">Toggle Always on Top</button>
+    <span id="onTopStatus">Status: OFF</span>
+    <button id="chooseFileBtn">Tambah File</button>
+    <button id="btnNaik">Naik</button>
+    <button id="btnTurun">Turun</button>
+    <label
+      >Durasi Gambar (detik):
+      <input
+        type="number"
+        id="imageDurationInput"
+        min="3"
+        max="60"
+        value="15"
+        style="width: 60px"
+      />
+    </label>
+    <button id="btnHapusItem">Hapus Item Terpilih</button>
+
+    <button id="btnLaporan">Laporan</button>
+    <ul
+      id="playlistBox"
+      style="
+        list-style: none;
+        padding: 0;
+        border: 1px solid #ccc;
+        height: 200px;
+        overflow: auto;
+      "
+    ></ul>
+
+    <!-- <ul id="fileList"></ul> -->
+    <!-- <ul
+      id="playlistBox"
+      style="
+        list-style: none;
+        padding: 0;
+        border: 1px solid #ccc;
+        height: 200px;
+        overflow: auto;
+      "
+    ></ul> -->
+    <!-- <textarea id="playlistBox" rows="10" style="width: 100%"></textarea> -->
+    <input
+      type="range"
+      id="videoSlider"
+      min="0"
+      max="100"
+      value="0"
+      step="0.1"
+      style="width: 100%; margin-top: 4px"
+    />
+    <div
+      id="videoTimeLabel"
+      style="text-align: right; font-family: monospace; margin-top: 4px"
+    >
+      00:00 / 00:00
+    </div>
+
+    <video
+      id="videoPlayer"
+      autoplay
+      muted
+      playsinline
+      style="display: none; width: 100%"
+    ></video>
+
+    <img
+      id="imageViewer"
+      style="display: none; width: 100%; max-height: 400px"
+    />
+    <script src="renderer.js"></script>
+  </body>
+</html>

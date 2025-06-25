@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Player</title>
+    <style>
+      body {
+        margin: 0;
+        background: black;
+        -webkit-app-region: drag;
+      }
+      video,
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="miniVideo" autoplay muted playsinline></video>
+    <img id="miniImage" />
+    <script src="miniwindow.js"></script>
+  </body>
+</html>
